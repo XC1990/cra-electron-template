@@ -1,0 +1,41 @@
+{
+  "name": "electron-template",
+  "main": "public/electron.js",
+  "description":"minimum config for create-react-app and electron",
+  "homepage": "./",
+  "version": "0.1.0",
+  "author": "xc1990",
+  "private": true,
+  "build": {
+    "appId": "com.example.electron-cra",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories":{
+      "buildResources": "assets"
+    }
+  },
+  "dependencies": {
+    "electron-is-dev": "^0.3.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-start": "electron .",
+    "electron-dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "preelectron-pack": "npm run build",
+    "electron-pack": "build — em.main=build/main.js"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "electron": "^1.8.3",
+    "electron-builder": "^20.4.1",
+    "wait-on": "^2.1.0"
+  }
+}
